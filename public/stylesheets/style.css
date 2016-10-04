@@ -23,7 +23,8 @@ a {
   color: white;
   text-decoration: none; }
 
-.flex--row, .section--main, .nav-bar, .nav--list, .section--secondary, .section--last, .image-container {
+/*------- classes made to extend ------*/
+.flex--row, .section--main, .section--secondary, .section--last, .nav-bar, .nav--list, .image-container {
   display: flex;
   flex-direction: row; }
 
@@ -50,6 +51,13 @@ a {
 
 .section--main {
   justify-content: flex-end; }
+
+.section--secondary, .section--last {
+  justify-content: space-between;
+  padding: 120px 0px; }
+
+.section--last {
+  padding: 50px 0px 100px 0px; }
 
 /*------- nav ------*/
 .top {
@@ -82,7 +90,7 @@ a {
   .nav--list li:hover {
     opacity: 1; }
 
-/*------- hero ------*/
+/*------- hero component ------*/
 .content--main {
   float: right;
   margin-top: 100px;
@@ -111,14 +119,7 @@ a {
 .cta-button:hover {
   background: #FF67B6; }
 
-/*------- following sections ------*/
-.section--secondary, .section--last {
-  justify-content: space-between;
-  padding: 120px 0px; }
-
-.section--last {
-  padding: 50px 0px 100px 0px; }
-
+/*------- following sections components ------*/
 .title-container h1 {
   font-size: 75px;
   line-height: 90px;
