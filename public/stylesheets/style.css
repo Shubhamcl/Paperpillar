@@ -1,3 +1,84 @@
-h1 {
-  font-size: 50px;
-  color: yellow; }
+/*----------------------- imports -----------------------*/
+@import 'https://fonts.googleapis.com/css?family=Passion+One';
+/*----------------------- layout -----------------------*/
+body {
+  background-color: #000;
+  font-family: sans-serif;
+  margin: 0px; }
+
+.wrapper {
+  margin: 0px auto; }
+  .wrapper--layout {
+    max-width: 100%; }
+  .wrapper--inner {
+    margin: 0px auto;
+    max-width: 1170px;
+    width: 100%; }
+
+/**************************************
+drop with media queries to 970, 750, ...
+***************************************/
+a {
+  color: white;
+  text-decoration: none; }
+
+.flex--row, .section--main, .nav-bar, .nav--list {
+  display: flex;
+  flex-direction: row; }
+
+.hero--theme, .section, .section--main, .top {
+  background: #494DA1; }
+
+/*----------------------- modules -----------------------*/
+.section, .section--main {
+  width: 100%;
+  height: 100vh; }
+
+.section--main {
+  justify-content: flex-end; }
+
+/*------- nav ------*/
+.top {
+  width: 100%; }
+
+.nav-bar {
+  justify-content: space-between;
+  padding: 40px 15px 30px 15px;
+  margin: 0px auto; }
+
+.logo {
+  width: 25px;
+  height: 15px;
+  margin-left: 50px;
+  margin-top: 16px; }
+
+.nav--list {
+  padding: 0px;
+  margin-right: 140px;
+  list-style: none; }
+  .nav--list li {
+    margin: 0px 30px;
+    text-transform: uppercase;
+    color: #FFF;
+    opacity: 0.6;
+    font-size: 12px;
+    font-weight: 100px;
+    letter-spacing: 2px;
+    transition: opacity 0.4s ease; }
+  .nav--list li:hover {
+    opacity: 0.9; }
+
+/*------- hero ------*/
+.content--main {
+  float: right;
+  margin-top: 100px;
+  margin-right: 140px; }
+
+.headline {
+  font-family: 'Passion One', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #FFF;
+  line-height: 60px;
+  font-size: 55px; }
