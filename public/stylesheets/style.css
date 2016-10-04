@@ -23,7 +23,7 @@ a {
   color: white;
   text-decoration: none; }
 
-.flex--row, .section--main, .nav-bar, .nav--list, .section--secondary, .image-container {
+.flex--row, .section--main, .nav-bar, .nav--list, .section--secondary, .section--last, .image-container {
   display: flex;
   flex-direction: row; }
 
@@ -112,9 +112,12 @@ a {
   background: #FF67B6; }
 
 /*------- following sections ------*/
-.section--secondary {
+.section--secondary, .section--last {
   justify-content: space-between;
   padding: 120px 0px; }
+
+.section--last {
+  padding: 50px 0px 100px 0px; }
 
 .title-container h1 {
   font-size: 75px;
@@ -189,10 +192,26 @@ a {
   letter-spacing: 4px;
   font-size: 30px;
   font-weight: 300;
-  color: #FFF; }
+  color: #FFF;
+  margin-bottom: 15px; }
 
 .end-caption {
-  font-size: 20px;
+  text-transform: none;
+  font-size: 13px;
   letter-spacing: 3px;
   font-weight: 300;
-  color: #5f5f5f; }
+  color: #cccccc; }
+
+.section--last .cta-end {
+  margin-top: 85px;
+  margin-right: 75px; }
+
+.socialmedia-icons {
+  margin-top: 25px; }
+
+.socialmedia-icons img {
+  margin-right: 20px;
+  color: #FFF;
+  opacity: 0.7;
+  height: 30px;
+  max-width: 30px; }
