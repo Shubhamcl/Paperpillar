@@ -1,5 +1,14 @@
-/*----------------------- imports -----------------------*/
+/*----------------------- imports & variables -----------------------*/
 @import 'https://fonts.googleapis.com/css?family=Passion+One';
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
+
+$large-screen: 1200px;
+$desktop-screen: 992px 1200px;
+$tablet-screen: 768px 992px;
+$phone-screen: 480px 768px;
+$smallphone-screen: 100px 480px;
+
+$mobile-version: 1px 768px;
 
 /*----------------------- layout -----------------------*/
 body {
@@ -15,22 +24,35 @@ body {
   }
   &--inner {
     margin: 0px auto;
-    max-width: 1170px;
     width: 100%;
+    @include breakpoint($large-screen){
+      max-width: 1170px;
+    }
+    @include breakpoint($desktop-screen){
+      max-width: 970px;
+    }
+    @include breakpoint($tablet-screen){
+      max-width: 750px;
+    }
+    @include breakpoint($phone-screen){
+      max-width: 460px;
+    }
+    @include breakpoint($smallphone-screen){
+      max-width: 300px;
+    }
   }
 }
-/**************************************
-drop with media queries to 970, 750, ...
-***************************************/
 a {
   color: white;
   text-decoration: none;
 }
-
 /*------- classes made to extend ------*/
 .flex--row {
   display: flex;
   flex-direction: row;
+  @include breakpoint($mobile-version) {
+    flex-direction: column;
+  }
 }
 .hero--theme {
   background: #5443A8;
@@ -45,7 +67,6 @@ a {
 }
 
 /*----------------------- modules -----------------------*/
-
 .section{
   @extend .hero--theme;
   width: 100%;
@@ -119,7 +140,13 @@ a {
   float: right;
   margin-top: 100px;
   margin-right: 118px;
-  margin-bottom: 300px;
+  margin-bottom: 280px;
+  @include breakpoint($mobile-version) {
+    margin: 100px auto 100px auto;
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 // make horizontal margin low and then auto with media queies
 .headline {
@@ -129,9 +156,13 @@ a {
   color: #FFF;
   line-height: 75px;
   font-size: 55px;
+  @include breakpoint($mobile-version) {
+    text-align: center;
+  }
 }
 .cta-button{
   margin-top: 10px;
+  margin-bottom: 20px;
   background: #FF57AE;
   padding: 18px 20px;
   border-radius: 35px;
@@ -145,8 +176,17 @@ a {
 .cta-button:hover{
   background: #FF67B6;
 }
-
+.cta-button:first-of-type{
+  @include breakpoint($mobile-version) {
+    margin: 10px auto 20px auto;
+  }
+}
 /*------- following sections components ------*/
+.title-container {
+  @include breakpoint($mobile-version) {
+    margin-bottom: 30px;
+  }
+}
 .title-container h1{
   @extend .heading-text;
   font-size: 75px;
@@ -174,6 +214,10 @@ a {
     margin-right: 60px;
     display: inline-block;
     vertical-align: top;
+    @include breakpoint($mobile-version){
+      display: block;
+      margin: 10px auto;
+    }
   }
 }
 .desc-text {
@@ -211,8 +255,10 @@ a {
 .routine {
   min-height: 300px;
 }
-.image-container{
-  @extend .flex--row;
+.image{
+  &--container {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   overflow-x: hidden;
   flex-grow: 1;
@@ -221,7 +267,44 @@ a {
   right: 0px;
   height: 300px;
   width: 100%;
+  @include breakpoint($mobile-version) {
+    height: 450px;
+    flex-wrap: wrap;
+  }
 }
+  &--holder {
+    width: 25%;
+    height: 100%;
+    background: #eee;
+    overflow: hidden;
+    @include breakpoint($mobile-version) {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
+.image--holder.image1 {
+  background: url('/images/i1.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.image--holder.image2 {
+  background: url('/images/i2.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+
+}
+.image--holder.image3 {
+  background: url('/images/i3.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.image--holder.image4 {
+  background: url('/images/i4.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
 .end-title {
   @extend .normal-font;
   letter-spacing: 4px;
@@ -241,6 +324,9 @@ a {
 .section--last .cta-end {
   margin-top: 85px;
   margin-right: 75px;
+  @include breakpoint($mobile-version){
+    margin: 50px auto;
+  }
 }
 .socialmedia-icons{
   margin-top: 25px;

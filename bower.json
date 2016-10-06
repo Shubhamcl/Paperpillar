@@ -1,0 +1,21 @@
+{
+  "name": "Paperpillar",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Shubham"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Shubhamcl/Paperpillar",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "breakpoint-sass": "^2.7.0",
+    "font-awesome": "^4.6.3"
+  }
+}
